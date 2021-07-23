@@ -17,10 +17,47 @@ def db_connection():
         raise e
     return conn
 
+def generate_table():
+    # Prepare sql string
+    sql_string = """
+    CREATE TABLE IF NOT EXISTS covid19_data(
+        ID              UUID PRIMARY KEY UNIQUE NOT NULL,
+        Country         VARCHAR(255) NOT NULL,
+        CountryCode     VARCHAR(255) NOT NULL,
+        Province        VARCHAR(255) NOT NULL,
+        City            VARCHAR(255) NOT NULL,
+        CityCode        VARCHAR(255) NOT NULL,
+        Lat             VARCHAR(255) NOT NULL,
+        Lon             VARCHAR(255) NOT NULL,
+        Confirmed       BIGINT NOT NULL,
+        Deaths          BIGINT NOT NULL,
+        Recovered       BIGINT NOT NULL,
+        Active          BIGINT NOT NULL,
+        Date            TIMESTAMPTZ
+    );
+    """
+
+    # Get connection
+    conn = db_connection()
+    cur = conn.cursor()
+
+    try:
+        # Execute generate table query
+        cur.execute(sql_string)
+
+        conn.commit()
+    except Exception as e:
+        # Rollback on exception
+        conn.rollback()
+        raise e
+    finally:
+        cur.close()
+        conn.close()
+
 def upsert_data(data):
     # Get connection
-    # conn = db_connection()
-    # cur = conn.cursor()
+    conn = db_connection()
+    cur = conn.cursor()
 
     # Generate sql values from data
     sql_values = ""
@@ -42,29 +79,18 @@ def upsert_data(data):
             sql_values += ","
 
     # Prepare sql string
-    sql_string = f"INSERT INTO covid19_data (ID, Country, CountryCode, Province, City, CityCode, Lat, Lon, Confirmed, Deaths, Recovered, Active, Date) VALUES {sql_values}"
+    sql_string = f"INSERT INTO covid19_data (ID, Country, CountryCode, Province, City, CityCode, Lat, Lon, Confirmed, Deaths, Recovered, Active, Date) VALUES {sql_values} ON CONFLICT (ID) DO UPDATE SET Confirmed = EXCLUDED.Confirmed, Deaths = EXCLUDED.Deaths, Recovered = EXCLUDED.Recovered, Active = EXCLUDED.Active;"
 
-    print(sql_string)
+    try:
+        # Execute the insertion query
+        cur.execute(sql_string)
 
-    # try:
-    #     # Execute the insertion query
-    #     cur.execute(sql_string)
-
-    #     conn.commit()
-    #     print("Data has been upserted")
-    # except Exception as e:
-    #     # Rollback on exception
-    #     conn.rollback()
-    #     raise e
-    # finally:
-    #     cur.close()
-    #     conn.close()
-
-if __name__ == '__main__':
-    ls = []
-    date = datetime.datetime.now()
-    dict = {'ID':'1','Country':'a','CountryCode':None,'Province':'b','City':'c','CityCode':'d','Lat':None,'Lon':None,'Confirmed':1,'Deaths':2,'Recovered':3,'Active':4,'Date':date}
-    ls.append(dict)
-    ls.append(dict)
-    ls.append(dict)
-    upsert_data(ls)
+        conn.commit()
+        print("Data has been upserted")
+    except Exception as e:
+        # Rollback on exception
+        conn.rollback()
+        raise e
+    finally:
+        cur.close()
+        conn.close()
