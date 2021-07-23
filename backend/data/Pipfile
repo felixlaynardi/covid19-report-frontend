@@ -5,6 +5,7 @@ verify_ssl = true
 
 [packages]
 psycopg2-binary = "*"
+requests = "*"
 
 [requires]
 python_version = "3.9"
