@@ -2,3 +2,4 @@
 .DS_Store
 backend/data/config.txt
 backend/data/Pipfile.lock
+backend/data/metadata.txt
