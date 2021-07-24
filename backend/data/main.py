@@ -1,5 +1,5 @@
-import db
-import api
+import lib.db as db
+import lib.api as api
 
 if __name__ == '__main__':
     # Generate table
