@@ -4,7 +4,7 @@ import ast
 import datetime
 
 # Import db config from config.txt
-with open('config.txt') as f:
+with open('config.txt', 'r') as f:
     contents = f.read()
     db_config = ast.literal_eval(contents)
 
@@ -54,7 +54,7 @@ def generate_table():
         cur.close()
         conn.close()
 
-def upsert_data(data):
+def upsert_data(data, updated_metadata):
     # Get connection
     conn = db_connection()
     cur = conn.cursor()
@@ -87,6 +87,11 @@ def upsert_data(data):
 
         conn.commit()
         print("Data has been upserted")
+
+        # Update metadata
+        with open("metadata.txt",'w') as f:
+            f.write(updated_metadata)
+        print("Metadata has been updated")
     except Exception as e:
         # Rollback on exception
         conn.rollback()
