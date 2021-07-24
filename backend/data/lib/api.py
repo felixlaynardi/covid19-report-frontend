@@ -1,4 +1,4 @@
-import payload
+import lib.payload as payload
 import requests
 import json
 

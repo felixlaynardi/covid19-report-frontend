@@ -1,10 +1,9 @@
 import psycopg2
 import psycopg2.extras
 import ast
-import datetime
 
 # Import db config from config.txt
-with open('config.txt', 'r') as f:
+with open('config/config.txt', 'r') as f:
     contents = f.read()
     db_config = ast.literal_eval(contents)
 
@@ -89,7 +88,7 @@ def upsert_data(data, updated_metadata):
         print("Data has been upserted")
 
         # Update metadata
-        with open("metadata.txt",'w') as f:
+        with open("config/metadata.txt",'w') as f:
             f.write(updated_metadata)
         print("Metadata has been updated")
     except Exception as e:

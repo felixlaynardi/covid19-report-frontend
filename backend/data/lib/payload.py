@@ -4,7 +4,7 @@ from os import error
 
 def create_payload():
     # Fetch metadata
-    with open('metadata.txt', 'r') as f:
+    with open('config/metadata.txt', 'r') as f:
         contents = f.read()
         metadata = ast.literal_eval(contents)
     date = metadata.get('from')
