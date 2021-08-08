@@ -1,13 +1,13 @@
-import './LandingBox.css';
+import './LandingPage.css';
 
 import LandingCase from './LandingCase/LandingCase.js'
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 
 import virusAnimation from '../../assets/virus.json'
 
-export default function LandingBox(){
+export default function LandingPage(){
     return(
-        <div className="landing-box-container">
+      <div className="landing-box-container">
         <div className="landing-box-inner">
           <div className="landing-box-top">
             <div className="landing-box-top-left">
