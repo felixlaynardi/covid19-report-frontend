@@ -1,15 +1,28 @@
-body{
-    color: white;
-}
 .landing-case-container{
     display: flex;
 
     margin-top: 5rem;
     width: 100%;
+
+    font-family: 'Inter';
+    font-weight: bold;
+
 }
 .case-box-container{
     text-align: center;
     width: 100%;
+    padding: 1rem;
+
+    border: 0.1rem;
+    border-style: double;
+}
+.case-box-container:hover{
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+
+    cursor: pointer;
+    transition-duration: .5s;
 }
 .case-box-title{
     font-size: 1.25rem;
