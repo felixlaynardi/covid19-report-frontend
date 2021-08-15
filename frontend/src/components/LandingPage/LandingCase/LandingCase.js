@@ -9,8 +9,9 @@ const CaseBox = (props) => {
         <div className="case-box-cases">
             {props.cases}
         </div>
-        <div className="case-box-increase">
+        <div className="case-box-increase" id={props.title}>
             {props.increase}
+            <div className="icon-arrow-up"></div>
         </div>
       </div>
     );
