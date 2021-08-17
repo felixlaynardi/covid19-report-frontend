@@ -3,7 +3,7 @@ import './LandingPage.css';
 import LandingCase from './LandingCase/LandingCase.js'
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 
-import virusAnimation from '../../assets/virus.json'
+import virusAnimation from '../../assets/animation/virus.json'
 
 export default function LandingPage(){
     return(
