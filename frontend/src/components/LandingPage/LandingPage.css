@@ -1,0 +1,106 @@
+.landing-box-container{
+  display: flex;
+  margin: 3rem auto;
+  width: 80%;
+  border-radius: 30px;
+
+
+  background: linear-gradient(242.86deg, rgba(255, 255, 255, 0.4) 5.44%, rgba(255, 255, 255, 0) 96.62%);
+  /* Note: backdrop-filter has minimal browser support */
+  backdrop-filter: blur(55px);
+}
+.landing-box-inner{
+  margin: auto 0;
+  padding: 10rem 2rem;
+  width: 100%;
+}
+.landing-box-top{
+  display: flex;
+  width: 100%;
+}
+.landing-box-top-left{
+  margin: auto 0;
+  width: 60%;
+}
+.landing-box-top-right{
+  margin: auto 0;
+  width: 40%;
+}
+.welcome-text{
+  font-weight: 600;
+  font-size: 3.5rem;
+
+  color: #FFFFFF;
+}
+.welcome-name{
+  color: #A51010;
+  letter-spacing: 0.18em;
+}
+.welcome-subtitle{
+  font-size: 2.5rem;
+  letter-spacing: 0.18em;
+}
+.dashboard-button{
+  font-weight: bold;
+  font-size: 1.0rem;
+  font-family: 'Inter';
+  letter-spacing: 0.1rem;
+
+  padding: 0.3rem 1rem;
+  
+  color: #FFFFFF;
+  background: #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border-style: double;
+}
+.dashboard-button:hover{
+  cursor: pointer;
+
+  color: #000000;
+  background: #FFFFFF;
+  transition-duration: 1s;
+}
+@media only screen and (max-width: 768px) {
+  .landing-box-container{
+    margin-top: 5rem;
+  }
+  .landing-box-inner{
+    padding: 2rem;
+  }
+  .landing-box-top{
+    display: block;
+  }
+  .landing-box-top-left, .landing-box-top-right{
+    width: 100%;
+  }
+  .dashboard-button{
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .welcome-text{
+    font-size: 3rem;
+  }
+  .welcome-subtitle{
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .landing-box-container{
+    width: 100%;
+  }
+  .welcome-text{
+    font-size: 2.5rem;
+  }
+  .welcome-subtitle{
+    font-size: 1.5rem;
+  }
+  .dashboard-button{
+    font-size: 0.75rem;
+  }
+  .virus-animation{
+    margin: 0 auto;
+    width: 75%;
+  }
+}

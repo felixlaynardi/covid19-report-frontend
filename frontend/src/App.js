@@ -1,23 +1,50 @@
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.css';
+
+import Navbar from './components/Navbar/Navbar';
+import LandingPage from './components/LandingPage/LandingPage';
+import DashboardPage from './components/DashboardPage/DashboardPage';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+const routes = [
+  {
+    path: "/",
+    exact: true,
+    content: () => <LandingPage/>
+  },
+  {
+    path: "/dashboard",
+    content: () => <DashboardPage/>
+  },
+  {
+    path: "/data"
+  }
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <React.StrictMode>
+        <Router>
+          <Navbar/>
+          <Switch>
+              {routes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  children={route.content}
+                />
+              ))}
+          </Switch>
+        </Router>
+      </React.StrictMode>
     </div>
   );
 }

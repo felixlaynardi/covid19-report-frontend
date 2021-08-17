@@ -1,0 +1,38 @@
+import './Navbar.css';
+
+import {NavLink} from "react-router-dom";
+
+function Navbar() {
+  return (
+    <div>
+        <nav className="sidebar-container">
+            <ul className="sidebar-list-box">
+                <li className="sidebar-list">
+                    <NavLink className="icon-home" activeClassName="active" exact to="/"></NavLink>
+                </li>
+                <li className="sidebar-list">
+                    <NavLink className="icon-bar-chart" activeClassName="active" to="/dashboard"></NavLink>
+                </li>
+                <li className="sidebar-list">
+                    <NavLink className="icon-th-list" activeClassName="active" to="/data"></NavLink>
+                </li>
+            </ul>
+        </nav>
+        <nav className="topbar-container">
+            <ul className="topbar-list-box">
+                <li className="topbar-list">
+                    <NavLink className="icon-home" activeClassName="active" exact to="/"></NavLink>
+                </li>
+                <li className="topbar-list">
+                    <NavLink className="icon-bar-chart" activeClassName="active" to="/dashboard"></NavLink>
+                </li>
+                <li className="topbar-list">
+                    <NavLink className="icon-th-list" activeClassName="active" to="/data"></NavLink>
+                </li>
+            </ul>
+        </nav>
+    </div>
+  );
+}
+
+export default Navbar;

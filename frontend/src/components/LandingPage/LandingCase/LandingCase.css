@@ -1,0 +1,68 @@
+.landing-case-container{
+    display: flex;
+
+    margin-top: 5rem;
+    width: 100%;
+
+    font-family: 'Inter';
+    font-weight: bold;
+
+}
+.case-box-container{
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+
+    border: 0.1rem;
+    border-style: double;
+}
+.case-box-container:hover{
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+
+    cursor: pointer;
+    transition-duration: .5s;
+}
+.case-box-title{
+    font-size: 1.25rem;
+    letter-spacing: 0.3em;
+}
+.case-box-cases{
+    font-size: 1.0rem;
+    letter-spacing: 0.3em;
+
+    margin-top: 1rem;
+}
+.case-box-increase{
+    font-size: 0.8rem;
+
+    margin-top: 0.5rem;
+}
+#Confirmed, #Death{
+    color: #FF7070;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#Recovered{
+    color: #7EF17E;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+}
+@media only screen and (max-width: 768px) {
+    .landing-case-container{
+        margin-top: 2.5rem;
+    }
+    .case-box-title, .case-box-cases{
+        letter-spacing: 0em;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .case-box-title{
+        font-size: 0.85rem;
+    }
+    .case-box-cases{
+        font-size: 0.6rem;
+    }
+    .case-box-increase{
+        font-size: 0.6rem;
+    }
+}
