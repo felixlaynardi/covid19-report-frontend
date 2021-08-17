@@ -62,6 +62,9 @@
   transition-duration: 1s;
 }
 @media only screen and (max-width: 768px) {
+  .landing-box-container{
+    margin-top: 5rem;
+  }
   .landing-box-inner{
     padding: 2rem;
   }

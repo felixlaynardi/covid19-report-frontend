@@ -16,7 +16,6 @@ const CaseBox = (props) => {
       </div>
     );
   };
-  
 
 function LandingCase(){
     return (
