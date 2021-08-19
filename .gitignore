@@ -3,3 +3,6 @@
 backend/data/config/config.txt
 backend/data/Pipfile.lock
 backend/data/config/metadata.txt
+
+backend/rest/vendor
+backend/db/db_data
