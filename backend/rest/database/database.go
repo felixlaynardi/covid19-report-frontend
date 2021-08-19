@@ -41,5 +41,7 @@ func GetDatabaseConnection(cfg Config) *sql.DB {
 		log.Fatal("[Database] db is unreachable: " + address + ", err: " + err.Error())
 	}
 
+	log.Println("[Database] db is reachable")
+
 	return db
 }
