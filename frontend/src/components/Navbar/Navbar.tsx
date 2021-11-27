@@ -2,13 +2,13 @@ import './Navbar.css';
 
 import {NavLink} from "react-router-dom";
 
-function Navbar() {
+const Navbar: React.FC = () => {
   return (
     <div>
         <nav className="sidebar-container">
             <ul className="sidebar-list-box">
                 <li className="sidebar-list">
-                    <NavLink className="icon-home" activeClassName="active" exact to="/"></NavLink>
+                    <NavLink className="icon-home" activeClassName="active" exact to="/home"></NavLink>
                 </li>
                 <li className="sidebar-list">
                     <NavLink className="icon-bar-chart" activeClassName="active" to="/dashboard"></NavLink>
@@ -21,7 +21,7 @@ function Navbar() {
         <nav className="topbar-container">
             <ul className="topbar-list-box">
                 <li className="topbar-list">
-                    <NavLink className="icon-home" activeClassName="active" exact to="/"></NavLink>
+                    <NavLink className="icon-home" activeClassName="active" exact to="/home"></NavLink>
                 </li>
                 <li className="topbar-list">
                     <NavLink className="icon-bar-chart" activeClassName="active" to="/dashboard"></NavLink>

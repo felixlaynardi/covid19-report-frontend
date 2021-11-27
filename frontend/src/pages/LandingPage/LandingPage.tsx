@@ -1,12 +1,16 @@
 import './LandingPage.css';
 
-import LandingCase from './LandingCase/LandingCase.js'
-import LottiePlayer from '../LottiePlayer/LottiePlayer';
+import LandingCase from '../../components/LandingPage/LandingCase/LandingCase'
+import LottiePlayer from '../../components/LottiePlayer/LottiePlayer';
+import Navbar from '../../components/Navbar/Navbar';
 
 import virusAnimation from '../../assets/animation/virus.json'
+import { IonContent } from '@ionic/react';
 
 export default function LandingPage(){
     return(
+      <IonContent>
+      <Navbar/>
       <div className="landing-box-container">
         <div className="landing-box-inner">
           <div className="landing-box-top">
@@ -26,5 +30,6 @@ export default function LandingPage(){
           <LandingCase/>
         </div>
       </div>
+      </IonContent>
     )
 }

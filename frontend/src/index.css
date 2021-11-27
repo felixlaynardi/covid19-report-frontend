@@ -2,19 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;600&display=swap');
 @import url('https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css');
 
-body{
+:root{
   margin: 0;
   padding: 0;
-
-  font-family: 'Overpass Mono';
-
-  background-color: #000000;
-  background: rgb(2,0,36);
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(16,16,103,1) 15%, rgba(1,1,20,1) 37%, rgba(0,0,0,1) 100%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  
+  --ion-font-family: 'Overpass Mono';
   min-height: 100vh;
+}
 
-  color: white;
+ion-content{
+    --background: radial-gradient(circle, 
+    var(--body-circle) 15%, 
+    var(--body-circle-upper) 37%, 
+    var(--body-circle-lower) 100%)!important;
+
+    --background-repeat: no-repeat;
+    --background-attachment: fixed;
 }
