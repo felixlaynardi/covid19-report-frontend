@@ -4,9 +4,11 @@
   width: 80%;
   border-radius: 30px;
 
-
-  background: linear-gradient(242.86deg, rgba(255, 255, 255, 0.4) 5.44%, rgba(255, 255, 255, 0) 96.62%);
-  /* Note: backdrop-filter has minimal browser support */
+  background: linear-gradient( 
+  242.86deg, 
+  var(--landing-page-container-upper) 5.44%, 
+  var(--landing-page-container-lower) 96.62%);
+  
   backdrop-filter: blur(55px);
 }
 .landing-box-inner{
@@ -29,8 +31,6 @@
 .welcome-text{
   font-weight: 600;
   font-size: 3.5rem;
-
-  color: #FFFFFF;
 }
 .welcome-name{
   color: #A51010;

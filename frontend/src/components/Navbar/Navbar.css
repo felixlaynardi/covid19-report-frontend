@@ -3,7 +3,7 @@
     align-items: center;
     position: fixed;
 
-    background-color: #171721;
+    background-color: var(--navbar-background-color);
 
     height: 100vh;
     top: 0;
@@ -24,7 +24,7 @@
     color:#808080;
 }
 .active{
-    color: #FFFFFF;
+    color: var(--ion-color-light-contrast);
 }
 .sidebar-list:hover{
     transform: scale(1.2);
@@ -33,9 +33,10 @@
 .topbar-container{
     display: none;
     align-items: center;
-    position: absolute;
+    
+    position: fixed;
 
-    background-color: #171721;
+    background-color: var(--navbar-background-color);
 
     width: 100%;
     top: 0;
