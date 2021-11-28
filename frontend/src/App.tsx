@@ -23,6 +23,7 @@ import './theme/variables.css';
 
 import LandingPage from './pages/LandingPage/LandingPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
+import DataPage from './pages/DataPage/DataPage';
 
 import { Switch } from 'react-router-dom';
 
@@ -35,7 +36,7 @@ const App: React.FC = () => (
         <Switch>
           <Route path="/home" component={LandingPage}/>
           <Route path="/dashboard" component={DashboardPage}/>
-          <Route path="/data" component={DashboardPage}/>
+          <Route path="/data" component={DataPage}/>
           <Redirect exact from="/" to="/home"/>
         </Switch>
       </IonRouterOutlet>

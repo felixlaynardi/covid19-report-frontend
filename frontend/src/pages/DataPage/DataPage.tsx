@@ -12,10 +12,10 @@ import {
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 
-import './DashboardPage.css';
-import { IonContent } from '@ionic/react';
+import './DataPage.css';
+import { IonContent, IonItem, IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
 
-export default function DashboardPage(){
+export default function DataPage(){
   let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   let setFont : string = 'black';
@@ -47,7 +47,7 @@ export default function DashboardPage(){
       },
       title: {
         display: true,
-        text: 'Daily Cases',
+        text: 'Cases in 2021',
         color: setFont,
         font: {weight: 'bold'}
       },
@@ -128,13 +128,52 @@ export default function DashboardPage(){
   return(
     <IonContent>
       <Navbar/>
-      <div className="dashboard-box-container">
-        <div className="dashboard-box-inner">
-          <div className="dashboard-title">
-            Daily Data
+      <div className="data-box-container">
+        <div className="data-box-inner">
+          <div className="data-title">
+            Data History
           </div>
+          <IonItem>
+            <IonLabel>Country</IonLabel>
+            <IonSelect>
+              <IonSelectOption value=""></IonSelectOption>
+              <IonSelectOption value=""></IonSelectOption>
+            </IonSelect>
+          </IonItem>
+          <IonItem>
+            <IonLabel>Daily / Monthly</IonLabel>
+            <IonSelect>
+              <IonSelectOption value="date">Daily</IonSelectOption>
+              <IonSelectOption value="month">Month</IonSelectOption>
+              <IonSelectOption value="month">Currently</IonSelectOption>
+            </IonSelect>
+          </IonItem>
+          <IonItem>
+            <IonLabel>Select graph by month</IonLabel>
+            <IonSelect>
+              <IonSelectOption value="1">January</IonSelectOption>
+              <IonSelectOption value="2">February</IonSelectOption>
+              <IonSelectOption value="3">March</IonSelectOption>
+              <IonSelectOption value="4">April</IonSelectOption>
+              <IonSelectOption value="5">May</IonSelectOption>
+              <IonSelectOption value="6">June</IonSelectOption>
+              <IonSelectOption value="7">July</IonSelectOption>
+              <IonSelectOption value="8">August</IonSelectOption>
+              <IonSelectOption value="9">September</IonSelectOption>
+              <IonSelectOption value="10">October</IonSelectOption>
+              <IonSelectOption value="11">November</IonSelectOption>
+              <IonSelectOption value="12">December</IonSelectOption>
+            </IonSelect>
+          </IonItem>
+          <IonItem>
+            <IonLabel>Select graph by year</IonLabel>
+            <IonSelect>
+              <IonSelectOption value="2020">2020</IonSelectOption>
+              <IonSelectOption value="2021">2021</IonSelectOption>
+            </IonSelect>
+          </IonItem>
         </div>
-        <div className="dashboard-chart-container">
+        <div className="data-chart-container">
           <Chart type='line' options={options} data={data} />
         </div>
       </div>

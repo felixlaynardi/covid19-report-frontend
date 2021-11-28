@@ -20,7 +20,7 @@
     border-radius: 1rem;
     text-align: center;
 }
-.icon-home, .icon-bar-chart, .icon-th-list{
+.icon-home, .icon-bar-chart, .icon-th-list, .icon-user{
     color:#808080;
 }
 .active{
@@ -49,7 +49,7 @@
     padding: 0.5rem;
 }
 .topbar-list{
-    margin: 0rem 2rem;
+    margin: 0rem 1.5rem;
     font-size: 1.5rem;
     padding: 0.1rem 0.8rem;
     border-radius: 1rem;
@@ -60,13 +60,18 @@
     transition-duration: 1s;
 }
 @media only screen and (max-width: 700px)  {
-    .landing-box-container{
-        margin-top: 7rem;
+    .landing-box-container, .dashboard-box-container, .data-box-container{
+        margin-top: 5rem!important;
     }
     .sidebar-container{
         display: none;
     }
     .topbar-container{
         display: flex;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .topbar-list{
+        margin: 0rem .5rem;
     }
 }
