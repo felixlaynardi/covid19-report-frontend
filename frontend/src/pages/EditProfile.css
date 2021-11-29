@@ -1,0 +1,53 @@
+.ion-no-border{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.backText{
+    font-family: OverpassMono;
+}
+
+.editProfileContainer img{
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.editProfileContainer{
+    text-align: center;
+    margin-top: 5px;
+}
+
+.changePhotoButton{
+    background-color: black;
+    font-family: OverpassMono Light !important;
+    color: #fff;
+    text-transform: none;
+    height: 35px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.editTitles{
+    margin-bottom: 0px !important;
+}
+
+.editNameInput{
+    border-bottom: 1px solid;
+    margin-top: 5px;
+    letter-spacing: 10px;
+    font-family: OverpassMono;
+}
+
+.certificateTitle{
+    margin-top: 45px;
+}
+
+.certificates{
+    text-align: center;
+}
+
+.certificates img{
+    width: 75%;
+}
