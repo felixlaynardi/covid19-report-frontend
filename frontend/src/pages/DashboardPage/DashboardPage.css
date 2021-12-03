@@ -25,6 +25,9 @@
 .dashboard-chart-container{
     min-height: 70vh;
 }
+.dashboard-chart {
+    padding-bottom: 1rem;
+}
 @media only screen and (max-width: 700px)  {
     .dashboard-box-container{
         width: 100%;

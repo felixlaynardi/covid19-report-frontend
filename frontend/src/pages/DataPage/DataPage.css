@@ -21,9 +21,23 @@
     font-weight: bold;
     text-align: center;
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
+    margin-bottom: 2.5rem;
 }
 .data-chart-container{
     min-height: 70vh;
+}
+.data-chart {
+    padding-bottom: 1rem;
+}
+.data-box-form-control{
+    margin-bottom: 1rem;
+}
+.data-submit-btn{
+    font-weight: bold;
+}
+.hidden{
+    display: none;
 }
 @media only screen and (max-width: 700px)  {
     .data-box-container{
