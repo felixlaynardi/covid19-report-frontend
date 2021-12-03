@@ -4,7 +4,7 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #8c8c8c;
+  --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -74,6 +74,18 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /* body */
+  --body-circle: rgb(184 184 255);
+  --body-circle-upper: rgb(250 242 255);
+  --body-circle-lower: rgb(255 255 255);
+
+  /* landing page */
+  --landing-page-container-upper: rgba(223, 223, 223, 0.4);
+  --landing-page-container-lower: rgba(154, 154, 154, 0);
+
+  /* navbar */
+  --navbar-background-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -145,6 +157,18 @@ http://ionicframework.com/docs/theming/ */
     --ion-color-light-contrast-rgb: 255,255,255;
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
+
+    /* body */
+    --body-circle: rgb(16,16,103);
+    --body-circle-upper: rgb(1,1,20);
+    --body-circle-lower: rgb(0,0,0);
+
+    /* landing page */
+    --landing-page-container-upper: rgba(255, 255, 255, 0.4);
+    --landing-page-container-lower: rgba(255, 255, 255, 0);
+
+    /* navbar */
+    --navbar-background-color: #171721;
   }
 
   /*
@@ -233,25 +257,4 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
-}
-
-@font-face {
-  font-family:'OverpassMono Bold';
-  src: url('../assets/fonts/OverpassMono-Bold.ttf');
-}
-@font-face {
-  font-family:'OverpassMono Light';
-  src: url('../assets/fonts/OverpassMono-Light.ttf');
-}
-@font-face {
-  font-family:'OverpassMono Medium';
-  src: url('../assets/fonts/OverpassMono-Medium.ttf');
-}
-@font-face {
-  font-family:'OverpassMono';
-  src: url('../assets/fonts/OverpassMono-Regular.ttf');
-}
-@font-face {
-  font-family:'OverpassMono SemiBold';
-  src: url('../assets/fonts/OverpassMono-SemiBold.ttf');
 }
