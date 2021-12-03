@@ -7,7 +7,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import virusAnimation from '../../assets/animation/virus.json'
 import { IonContent } from '@ionic/react';
 
-export default function LandingPage(){
+const LandingPage: React.FC = () => {
     return(
       <IonContent>
       <Navbar/>
@@ -19,8 +19,8 @@ export default function LandingPage(){
                 Welcome <span className="welcome-name">Nael</span>! <br/>
                 <span className="welcome-subtitle">Let's Help Recover the Earth</span>
               </div>
-              <button className="dashboard-button">
-                Dashboard
+              <button className="login-button">
+                Join now
               </button>
             </div>
             <div className="landing-box-top-right">
@@ -33,3 +33,5 @@ export default function LandingPage(){
       </IonContent>
     )
 }
+
+export default LandingPage;

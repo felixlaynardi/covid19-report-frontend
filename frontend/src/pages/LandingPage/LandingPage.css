@@ -2,7 +2,7 @@
   display: flex;
   margin: 3rem auto;
   width: 80%;
-  border-radius: 30px;
+  border-radius: 0.5rem;
 
   background: linear-gradient( 
   242.86deg, 
@@ -40,7 +40,7 @@
   font-size: 2.5rem;
   letter-spacing: 0.18em;
 }
-.dashboard-button{
+.login-button{
   font-weight: bold;
   font-size: 1.0rem;
   font-family: 'Inter';
@@ -54,7 +54,7 @@
   border-radius: 10px;
   border-style: double;
 }
-.dashboard-button:hover{
+.login-button:hover{
   cursor: pointer;
 
   color: #000000;
@@ -74,7 +74,7 @@
   .landing-box-top-left, .landing-box-top-right{
     width: 100%;
   }
-  .dashboard-button{
+  .login-button{
     width: 100%;
   }
 }
@@ -96,7 +96,7 @@
   .welcome-subtitle{
     font-size: 1.5rem;
   }
-  .dashboard-button{
+  .login-button{
     font-size: 0.75rem;
   }
   .virus-animation{

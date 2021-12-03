@@ -1,0 +1,46 @@
+.data-box-container{
+    min-height: 80vh;
+
+    display: block;
+    margin: 3rem auto;
+    width: 80%;
+    border-radius: 0.5rem;
+
+    background: linear-gradient( 
+    242.86deg, 
+    var(--landing-page-container-upper) 5.44%, 
+    var(--landing-page-container-lower) 96.62%);
+
+    backdrop-filter: blur(55px);
+}
+.data-box-inner{
+    padding: 2rem;
+}
+.data-title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
+    margin-bottom: 2.5rem;
+}
+.data-chart-container{
+    min-height: 70vh;
+}
+.data-chart {
+    padding-bottom: 1rem;
+}
+.data-box-form-control{
+    margin-bottom: 1rem;
+}
+.data-submit-btn{
+    font-weight: bold;
+}
+.hidden{
+    display: none;
+}
+@media only screen and (max-width: 700px)  {
+    .data-box-container{
+        width: 100%;
+    }
+}
