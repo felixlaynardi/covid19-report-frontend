@@ -24,6 +24,7 @@ import './theme/variables.css';
 import LandingPage from './pages/LandingPage/LandingPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
 import DataPage from './pages/DataPage/DataPage';
+import ProfileBefore from './pages/ProfilePage/ProfileBefore';
 
 import { Switch } from 'react-router-dom';
 
@@ -37,6 +38,7 @@ const App: React.FC = () => (
           <Route path="/home" component={LandingPage}/>
           <Route path="/dashboard" component={DashboardPage}/>
           <Route path="/data" component={DataPage}/>
+          <Route path="/profile" component={ProfileBefore}/>
           <Redirect exact from="/" to="/home"/>
         </Switch>
       </IonRouterOutlet>
