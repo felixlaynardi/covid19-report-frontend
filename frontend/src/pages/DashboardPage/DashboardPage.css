@@ -1,0 +1,35 @@
+.dashboard-box-container{
+    min-height: 80vh;
+
+    display: block;
+    margin: 3rem auto;
+    width: 80%;
+    border-radius: 0.5rem;
+
+    background: linear-gradient( 
+    242.86deg, 
+    var(--landing-page-container-upper) 5.44%, 
+    var(--landing-page-container-lower) 96.62%);
+
+    backdrop-filter: blur(55px);
+}
+.dashboard-box-inner{
+    padding: 2rem;
+}
+.dashboard-title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+.dashboard-chart-container{
+    min-height: 70vh;
+}
+.dashboard-chart {
+    padding-bottom: 1rem;
+}
+@media only screen and (max-width: 700px)  {
+    .dashboard-box-container{
+        width: 100%;
+    }
+}

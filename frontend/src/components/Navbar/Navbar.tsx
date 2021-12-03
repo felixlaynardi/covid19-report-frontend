@@ -16,6 +16,9 @@ const Navbar: React.FC = () => {
                 <li className="sidebar-list">
                     <NavLink className="icon-th-list" activeClassName="active" to="/data"></NavLink>
                 </li>
+                <li className="sidebar-list">
+                    <NavLink className="icon-user" activeClassName="active" to="/data"></NavLink>
+                </li>
             </ul>
         </nav>
         <nav className="topbar-container">
@@ -28,6 +31,9 @@ const Navbar: React.FC = () => {
                 </li>
                 <li className="topbar-list">
                     <NavLink className="icon-th-list" activeClassName="active" to="/data"></NavLink>
+                </li>
+                <li className="topbar-list">
+                    <NavLink className="icon-user" activeClassName="active" to="/data"></NavLink>
                 </li>
             </ul>
         </nav>
