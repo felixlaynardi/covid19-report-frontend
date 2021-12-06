@@ -16,7 +16,7 @@
     height: 100%;
     box-shadow: none !important;
     background: none;
-    margin-top: 3rem auto;
+    margin-top: 3rem;
 }
 
 .mainWelcome h1{
@@ -62,8 +62,8 @@
     text-transform: none;
     border-radius: 30px;
     /*margin-bottom: 25px;*/
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
     height: 15px;
 }
 
@@ -74,12 +74,24 @@
     text-transform: none;
     border-radius: 30px;
     /*margin-bottom: 25px;*/
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
     height: 15px;
 }
 
 ion-segment-button {
     --indicator-color: transparent !important;
     --indicator-color-checked: transparent !important;
+}
+
+.backButtonProfileBefore{
+    background-color: red !important;
+    color: #fff;
+    /*font-size: 1.5rem;*/
+    text-transform: none;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 30px;
 }

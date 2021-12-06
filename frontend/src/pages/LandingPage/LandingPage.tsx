@@ -5,7 +5,7 @@ import LottiePlayer from '../../components/LottiePlayer/LottiePlayer';
 import Navbar from '../../components/Navbar/Navbar';
 
 import virusAnimation from '../../assets/animation/virus.json'
-import { IonContent } from '@ionic/react';
+import {IonButton, IonContent} from '@ionic/react';
 
 const LandingPage: React.FC = () => {
     return(
@@ -19,9 +19,9 @@ const LandingPage: React.FC = () => {
                 Welcome <span className="welcome-name">Nael</span>! <br/>
                 <span className="welcome-subtitle">Let's Help Recover the Earth</span>
               </div>
-              <button className="login-button">
+              <IonButton expand="full" fill="clear" className="login-button" routerLink="/profile">
                 Join now
-              </button>
+              </IonButton>
             </div>
             <div className="landing-box-top-right">
               <LottiePlayer animation={virusAnimation} animationClass={"virus-animation"}/>

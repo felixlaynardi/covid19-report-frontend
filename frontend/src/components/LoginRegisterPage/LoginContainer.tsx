@@ -36,21 +36,6 @@ const LoginContainer: React.FC<ContainerProps> = () => {
                         <IonLabel>Login</IonLabel>
                     </IonSegmentButton>
                 </IonSegment>
-
-                <IonGrid className="loginBottomGrid">
-                    <IonRow>
-                        <IonCol>
-                            <p>Don't have an account yet??</p>
-                        </IonCol>
-                        <IonCol>
-                            <IonSegment>
-                                <IonSegmentButton class="registerButtonInLogin">
-                                    <IonLabel>Register</IonLabel>
-                                </IonSegmentButton>
-                            </IonSegment>
-                        </IonCol>
-                    </IonRow>
-                </IonGrid>
             </IonCard>
         </IonContent>
     );

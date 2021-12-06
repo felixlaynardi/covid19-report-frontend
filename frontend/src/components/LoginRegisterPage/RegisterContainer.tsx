@@ -25,13 +25,13 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
                         <p className="redText">recovering </p>
                         <p>the earth with us!</p>
                     </div>
-                    <IonItem>
+                    <IonItem className="inputItems">
                         <IonInput placeholder="NAME" class="nameInput"><IonIcon class="nameInputIcon" icon={person} slot="start"/></IonInput>
                     </IonItem>
-                    <IonItem>
+                    <IonItem className="inputItems">
                         <IonInput placeholder="EMAIL" class="emailInput"><IonIcon class="emailInputIcon" icon={mail} slot="start"/></IonInput>
                     </IonItem>
-                    <IonItem>
+                    <IonItem className="inputItems">
                         <IonInput placeholder="PASSWORD" class="passwordInput" type="password"><IonIcon class="passwordInputIcon" icon={lockClosed} slot="start"/></IonInput>
                     </IonItem>
 
@@ -41,20 +41,6 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
                         </IonSegmentButton>
                     </IonSegment>
 
-                    <IonGrid className="registerBottomGrid">
-                        <IonRow>
-                            <IonCol>
-                                <p>Already have an account?</p>
-                            </IonCol>
-                            <IonCol>
-                                <IonSegment>
-                                    <IonSegmentButton class="loginButtonInRegister">
-                                        <IonLabel>Login</IonLabel>
-                                    </IonSegmentButton>
-                                </IonSegment>
-                            </IonCol>
-                        </IonRow>
-                    </IonGrid>
                 </IonCard>
         </IonContent>
     );

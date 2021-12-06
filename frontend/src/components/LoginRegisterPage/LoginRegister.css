@@ -14,18 +14,18 @@ h1{
 }
 
 .createAccountCard{
-    margin-left: 25px;
-    margin-right: 25px;
-    padding-top: 25px;
-    height: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25%;
+    height: 95%;
     box-shadow: none !important;
 }
 
 .loginCard{
-    margin-left: 25px;
-    margin-right: 25px;
-    padding-top: 25px;
-    height: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25%;
+    height: 95%;
     box-shadow: none !important;
 }
 
@@ -41,6 +41,7 @@ h1{
     border-bottom: 1px solid;
     margin-top: 35px;
     letter-spacing: 10px;
+    background-color: transparent;
 }
 
 .emailInputIcon{
