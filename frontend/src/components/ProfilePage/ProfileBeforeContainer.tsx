@@ -56,12 +56,12 @@ const ProfileBeforeContainer: React.FC<ContainerProps> = () => {
             </IonContent>
             <IonModal isOpen={registerModal.isOpen}>
                 <RegisterContainer/>
-                <IonButton className="backButtonProfileBefore" onClick={() => setRegisterModal({isOpen: false})}>
+                <IonButton expand="full" fill="clear" className="backButtonProfileBefore" onClick={() => setRegisterModal({isOpen: false})}>
                     BACK</IonButton>
             </IonModal>
             <IonModal isOpen={loginModal.isOpen}>
                 <LoginContainer/>
-                <IonButton className="backButtonProfileBefore" onClick={() => setLoginModal({isOpen: false})}>
+                <IonButton expand="full" fill="clear" className="backButtonProfileBefore" onClick={() => setLoginModal({isOpen: false})}>
                     BACK</IonButton>
             </IonModal>
         </IonPage>

@@ -13,6 +13,22 @@ h1{
     color: red;
 }
 
+@media (prefers-color-scheme: dark) {
+    h1{
+        color: #fff !important;
+
+    }
+
+    p{
+        color: #fff !important;
+    }
+
+    .redText{
+        color: red !important;
+    }
+
+}
+
 .createAccountCard{
     padding-left: 25px;
     padding-right: 25px;
