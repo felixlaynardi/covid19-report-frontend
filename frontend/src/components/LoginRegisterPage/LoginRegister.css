@@ -1,0 +1,126 @@
+p{
+    display: inline;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+h1{
+    font-weight: bold;
+    color: #000;
+}
+
+.redText{
+    color: red;
+}
+
+.createAccountCard{
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top: 25px;
+    height: 100%;
+    box-shadow: none !important;
+}
+
+.loginCard{
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top: 25px;
+    height: 100%;
+    box-shadow: none !important;
+}
+
+.registerText{
+    margin-top: 25px;
+}
+
+.nameInputIcon{
+    margin-right: 25px;
+}
+
+.nameInput{
+    border-bottom: 1px solid;
+    margin-top: 35px;
+    letter-spacing: 10px;
+}
+
+.emailInputIcon{
+    margin-right: 25px;
+}
+
+.emailInput{
+    border-bottom: 1px solid;
+    margin-top: 35px;
+    letter-spacing: 10px;
+}
+
+.passwordInputIcon{
+    margin-right: 25px;
+}
+
+.passwordInput{
+    border-bottom: 1px solid;
+    margin-top: 35px;
+    letter-spacing: 10px;
+}
+
+.registerButtonInRegister{
+    margin-top: 35px;
+    color: #fff;
+    background-color: red;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: none;
+    border-radius: 30px;
+    /*margin-bottom: 25px;*/
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 15px;
+}
+
+.loginButtonInRegister{
+    color: #fff;
+    background-color: black;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: none;
+    border-radius: 30px;
+    /*margin-bottom: 25px;*/
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 15px;
+}
+
+.registerButtonInLogin{
+    color: #fff;
+    background-color: red;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: none;
+    border-radius: 30px;
+    /*margin-bottom: 25px;*/
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 15px;
+}
+
+.loginButtonInLogin{
+    margin-top: 35px;
+    color: #fff;
+    background-color: black;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: none;
+    border-radius: 30px;
+    /*margin-bottom: 25px;*/
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 15px;
+}
+
+.registerBottomGrid{
+    margin-top: 25px;
+}
+
+.loginBottomGrid{
+    margin-top: 25px;
+}
