@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "covid19-personal-tracker",
   "integrations": {
     "capacitor": {}
   },
