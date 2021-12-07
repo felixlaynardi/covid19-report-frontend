@@ -17,6 +17,7 @@ import { Geolocation } from '@capacitor/geolocation';
 import Navbar from '../../components/Navbar/Navbar';
 import UserContext from "../../data/user-context";
 import { useHistory } from "react-router";
+import { useToast } from "@agney/ir-toast";
 import axios from "axios";
 
 const Profile: React.FC = () => {
@@ -26,6 +27,7 @@ const Profile: React.FC = () => {
     // const [lat, setLat] = useState<number>(0);
     // const [lng, setLng] = useState<number>(0);
     let lat: string | number, lng: string | number;
+    const Toast = useToast();
 
     const [myLocation, setMyLocation] = useState<string>('Location Untracked');
 
@@ -73,6 +75,7 @@ const Profile: React.FC = () => {
                     }
                 }).catch((error) => {
                     userContext.setToken("", "");
+                    Toast.error("Session expired");
                     history.push('/login');
                 });
             } else {
@@ -126,6 +129,7 @@ const Profile: React.FC = () => {
 
     const logoutHandler = async() => {
         userContext.setToken("", "");
+        Toast.success("Logout success");
         history.push('/login');
     }
 
