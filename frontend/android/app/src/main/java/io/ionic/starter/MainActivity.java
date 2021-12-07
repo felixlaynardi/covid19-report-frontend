@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.covid19.personal.tracker;
 
 import com.getcapacitor.BridgeActivity;
 
