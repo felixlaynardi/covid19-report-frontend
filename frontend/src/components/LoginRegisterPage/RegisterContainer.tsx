@@ -23,8 +23,8 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
     const emailRef = useRef<HTMLIonInputElement>(null);
     const passwordRef = useRef<HTMLIonInputElement>(null);
     const[myDateOfBirth, setMyDateOfBirth] = useState(new Date());
-    var registerUrl = "http://localhost:4747/register";
-    var greetUrl = "http://localhost:4747/greet";
+    var registerUrl = "https://covid-umn.herokuapp.com/register";
+    var greetUrl = "https://covid-umn.herokuapp.com/greet";
     const history = useHistory();
     const userContext = useContext(UserContext);
 
