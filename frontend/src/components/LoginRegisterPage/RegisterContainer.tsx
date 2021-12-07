@@ -16,6 +16,7 @@ import {useRef, useState, useEffect, useContext} from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
 import UserContext from "../../data/user-context";
+import { useToast } from "@agney/ir-toast";
 interface ContainerProps { }
 
 const RegisterContainer: React.FC<ContainerProps> = () => {
@@ -27,6 +28,7 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
     var greetUrl = "http://localhost:4747/greet";
     const history = useHistory();
     const userContext = useContext(UserContext);
+    const Toast = useToast();
 
     useEffect(() => {
         async function checkTokenExistOrNot () {
@@ -75,12 +77,13 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
         });
 
         instance.post(registerUrl, data).then((response) => {
-            userContext.setToken(response.data.data.user_token, response.data.data.name)
+            userContext.setToken(response.data.data.user_token, response.data.data.name);
+            Toast.success('Registration success');
             history.push("/home");
         }).catch((error) => {
             console.log(error)
+            Toast.error("Registration failed");
         });
-        history.push("/home");
     };
 
     return (

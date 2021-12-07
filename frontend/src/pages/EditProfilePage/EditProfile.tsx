@@ -16,6 +16,7 @@ import {Camera, CameraResultType, CameraSource} from '@capacitor/camera';
 import UserContext from "../../data/user-context";
 import { useHistory } from "react-router";
 import axios from "axios";
+import { useToast } from "@agney/ir-toast";
 
 import './EditProfile.css';
 const EditProfile: React.FC = () => {
@@ -23,6 +24,7 @@ const EditProfile: React.FC = () => {
     var getUserUrl = "http://localhost:4747/user";
     const history = useHistory();
     var dateOfBirth = "";
+    const Toast = useToast();
 
     const[myFullName, setMyFullName] = useState<string>('John Doe');
     const[myProfilePicture, setMyProfilePicture] = useState<string>('https://i.ibb.co/WHrxLMF/profilepic.png');
@@ -75,6 +77,7 @@ const EditProfile: React.FC = () => {
                     dateOfBirth = response.data.data.date_of_birth;
                 }).catch((error) => {
                     userContext.setToken("", "");
+                    Toast.error("Session expired");
                     history.push('/login');
                 });
             } else {
@@ -165,9 +168,9 @@ const EditProfile: React.FC = () => {
         //     return request
         // });
         instance.patch(getUserUrl, formData).then((response) => {
-            history.push("/profile");
+            Toast.success("Update data Success");
         }).catch((error) => {
-            console.log(error)
+            Toast.success("Update data Failed");
         });
         history.push("/profile");
     }
