@@ -6,8 +6,12 @@ import Navbar from '../../components/Navbar/Navbar';
 
 import virusAnimation from '../../assets/animation/virus.json'
 import {IonButton, IonContent} from '@ionic/react';
+import { useContext } from 'react';
+
+import UserContext from "../../data/user-context";
 
 const LandingPage: React.FC = () => {
+  const userContext = useContext(UserContext);
     return(
       <IonContent>
       <Navbar/>
@@ -16,12 +20,37 @@ const LandingPage: React.FC = () => {
           <div className="landing-box-top">
             <div className="landing-box-top-left">
               <div className="welcome-text">
-                Welcome <span className="welcome-name">Nael</span>! <br/>
+                Welcome <span className="welcome-name">
+                  {(() => {
+                    if(userContext.user.name == ""){
+                      return(<>Covid Fighter</>)
+                    }else{
+                      return(<>{userContext.user.name}</>)
+                    }
+                  })()}
+                  </span>
+                  ! <br/>
                 <span className="welcome-subtitle">Let's Help Recover the Earth</span>
               </div>
-              <IonButton expand="full" fill="clear" className="login-button" routerLink="/profile">
-                Join now
-              </IonButton>
+                {(() => {
+                  if (userContext.user.token == "") {
+                    return (
+                      <>
+                        <IonButton expand="full" fill="clear" className="login-button" routerLink="/login">
+                          Join now
+                        </IonButton>
+                      </>
+                    )
+                  } else {
+                    return (
+                      <>
+                        <IonButton expand="full" fill="clear" className="login-button" routerLink="/profile">
+                          View my profile
+                        </IonButton>
+                      </>
+                    )
+                  }
+                })()}
             </div>
             <div className="landing-box-top-right">
               <LottiePlayer animation={virusAnimation} animationClass={"virus-animation"}/>

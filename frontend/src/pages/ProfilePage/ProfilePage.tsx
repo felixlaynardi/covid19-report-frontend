@@ -12,11 +12,17 @@ import {
 
 import './ProfilePage.css';
 import {refreshCircleOutline} from "ionicons/icons";
-import {useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import { Geolocation } from '@capacitor/geolocation';
+import Navbar from '../../components/Navbar/Navbar';
+import UserContext from "../../data/user-context";
+import { useHistory } from "react-router";
+import axios from "axios";
 
 const Profile: React.FC = () => {
-
+    const userContext = useContext(UserContext);
+    var getUserUrl = "http://localhost:4747/user";
+    const history = useHistory();
     // const [lat, setLat] = useState<number>(0);
     // const [lng, setLng] = useState<number>(0);
     let lat: string | number, lng: string | number;
@@ -35,6 +41,46 @@ const Profile: React.FC = () => {
     const[myCerti2, setMyCerti2] = useState<string>('https://i.ibb.co/RbzWjSL/blank.png');
 
     // let city: string, country: string;
+
+    useEffect(() => {
+        async function checkTokenExistOrNot () {
+            if(userContext.user.token != ""){
+                const headers = {
+                    "Content-Type": "application/json",
+                    "Authorization" : "Bearer " + userContext.user.token
+                }
+                const instance = axios.create({
+                    headers: headers,
+                });    
+
+                instance.get(getUserUrl).then((response) => {
+                    setMyFullName(response.data.data.name)
+                    if (response.data.data.vaccine_type != "") {
+                        setMyVaccineStatus("Vaccined")
+                        setMyVaccineType(response.data.data.vaccine_type)
+                    }
+                    if (response.data.data.health_status != "") {
+                        setMyHealthStatus(response.data.data.health_status)
+                    }
+                    if (response.data.data.vaccine_certificate_1 != "") {
+                        setMyCerti1(response.data.data.vaccine_certificate_1)
+                    }
+                    if (response.data.data.vaccine_certificate_2 != "") {
+                        setMyCerti2(response.data.data.vaccine_certificate_2)
+                    }
+                    if(response.data.data.profile_picture != ""){
+                        setMyProfilePicture(response.data.data.profile_picture)
+                    }
+                }).catch((error) => {
+                    userContext.setToken("", "");
+                    history.push('/login');
+                });
+            } else {
+                history.push('/login');
+            }
+        }
+        checkTokenExistOrNot();
+    }, [])
 
     const trackPosition = async() => {
         const data = await Geolocation.watchPosition({
@@ -78,9 +124,15 @@ const Profile: React.FC = () => {
 
     };
 
+    const logoutHandler = async() => {
+        userContext.setToken("", "");
+        history.push('/login');
+    }
+
     return (
         <IonPage>
             <IonContent fullscreen>
+                <Navbar/>
                 <IonCard>
                     <div className="profileContainer">
                         <img src={myProfilePicture}/>
@@ -117,6 +169,9 @@ const Profile: React.FC = () => {
                             <img src={myCerti1}/>
                             <img src={myCerti2}/>
                         </IonSegment>
+                    </div>
+                    <div className="logoutContainer">
+                        <IonButton expand="full" fill="clear" className="editProfileButton" onClick={logoutHandler}>Log Out</IonButton>
                     </div>
                 </IonCard>
             </IonContent>

@@ -5,7 +5,7 @@
 }
 .profileContainer{
     text-align: center;
-    margin-top: 25px;
+    margin-top: 75px;
     align-items: center;
     justify-content: center;
 }
@@ -89,4 +89,9 @@ ion-card{
 
 ion-toolbar{
     box-shadow: none !important;
+}
+
+.logoutContainer {
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
