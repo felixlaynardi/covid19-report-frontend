@@ -27,13 +27,14 @@ import DataPage from './pages/DataPage/DataPage';
 import ProfileBefore from './pages/ProfilePage/ProfileBefore';
 
 import { Switch } from 'react-router-dom';
-
+import { ToastProvider, useToast } from "@agney/ir-toast";
 import './index.css'
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfile from "./pages/EditProfilePage/EditProfile";
 import UserContextProvider from "./data/UserContextProvider";
 const App: React.FC = () => (
   <IonApp>
+    <ToastProvider value={{ duration: 1500 }}>
     <IonReactRouter>
       <UserContextProvider>
         <IonRouterOutlet id="main">
@@ -48,8 +49,9 @@ const App: React.FC = () => (
             <Redirect exact from="/" to="/home"/>
           </Switch>
         </IonRouterOutlet>
-      </UserContextProvider>
+      </UserContextProvider>   
     </IonReactRouter>
+    </ToastProvider>
   </IonApp>
 );
 

@@ -14,8 +14,9 @@ import {
 import {lockClosed, mail, person} from "ionicons/icons";
 import {useContext, useEffect, useRef} from "react";
 import axios from "axios";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import UserContext from "../../data/user-context";
+import { useToast } from "@agney/ir-toast";
 interface ContainerProps { }
 
 const LoginContainer: React.FC<ContainerProps> = () => {
@@ -25,6 +26,7 @@ const LoginContainer: React.FC<ContainerProps> = () => {
     var greetUrl = "http://localhost:4747/greet";
     const history = useHistory();
     const userContext = useContext(UserContext);
+    const Toast = useToast();
 
     useEffect(() => {
         async function checkTokenExistOrNot () {
@@ -40,6 +42,7 @@ const LoginContainer: React.FC<ContainerProps> = () => {
                 instance.get(greetUrl).then((response) => {
                     history.push("/home");
                 }).catch((error) => {
+                    console.log(error.response)
                     userContext.setToken("", "");
                 });
             }
@@ -69,19 +72,13 @@ const LoginContainer: React.FC<ContainerProps> = () => {
             headers: headers,
         });
 
-        // instance.interceptors.request.use(request => {
-        //     console.log('Starting Request', JSON.stringify(request, null, 2))
-        //     return request
-        // });
-
         instance.post(loginUrl, data).then((response) => {
-            userContext.setToken(response.data.data.user_token, response.data.data.name)
+            userContext.setToken(response.data.data.user_token, response.data.data.name);
+            Toast.success('Login success');
             history.push("/home");
         }).catch((error) => {
-            console.log(error.response)
-        });
-        
-        history.push("/home");
+            Toast.error('Login failed');
+        });    
     };
 
     return (
