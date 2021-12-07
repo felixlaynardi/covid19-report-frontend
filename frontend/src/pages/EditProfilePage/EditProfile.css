@@ -1,5 +1,5 @@
-.ion-no-border{
-    margin-left: 20px;
+.ion-no-border {
+    margin-left: 0px;
     margin-top: 10px;
 }
 
@@ -26,6 +26,7 @@
 
 .editTitles{
     margin-bottom: 0px !important;
+    margin-left: 15px;
 }
 
 .editNameInput{
@@ -34,7 +35,22 @@
     letter-spacing: 10px;
 }
 
+.editProfileInput ion-icon{
+    margin-right: 25px;
+}
+
+.editProfileInput{
+    border-bottom: 1px solid;
+    margin-top: 5px;
+    letter-spacing: 10px;
+}
+
+.editProfileInput ion-icon{
+    margin-right: 25px;
+}
+
 .certificateTitle{
+    margin-left: 15px;
     margin-top: 45px;
 }
 
@@ -45,3 +61,28 @@
 .certificates img{
     width: 75%;
 }
+
+.saveButton{
+    background-color: black;
+    color: #fff;
+    text-transform: none;
+    height: 35px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .changePhotoButton{
+        background-color: white;
+        color: black;
+    }
+
+    .saveButton{
+        background-color: white;
+        color: black;
+    }
+}
+

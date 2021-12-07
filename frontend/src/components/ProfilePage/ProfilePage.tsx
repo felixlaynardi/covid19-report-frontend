@@ -1,4 +1,5 @@
 import {IonApp, IonCard, IonContent, IonPage} from "@ionic/react";
+import Navbar from "../Navbar/Navbar";
 
 interface ContainerProps { }
 
@@ -6,6 +7,7 @@ const ProfilePage: React.FC<ContainerProps> = () => {
     return (
         <IonPage>
             <IonContent>
+                <Navbar/>
                 <IonCard>
                     <div className="container">
                         <strong>Profile Page</strong>

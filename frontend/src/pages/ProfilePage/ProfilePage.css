@@ -1,10 +1,25 @@
 .profileContainer img{
     width: 40%;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
-
 .profileContainer{
     text-align: center;
-    margin-top: 25px;
+    margin-top: 75px;
+    align-items: center;
+    justify-content: center;
+}
+
+.locationText{
+    margin-top: 7px;
+}
+
+ion-grid{
+    margin-left: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px !important;
 }
 
 ion-card{
@@ -27,6 +42,7 @@ ion-card{
 
 .titles{
     margin-left: 35px;
+    margin-top: 25px;
 }
 
 .statusContainer{
@@ -43,7 +59,7 @@ ion-card{
     color: #000;
     text-transform: none;
     border-radius: 30px;
-    height: 10px;
+    height: 25px;
     margin: 10px 25px;
 }
 
@@ -52,7 +68,7 @@ ion-card{
     color: #000;
     text-transform: none;
     border-radius: 30px;
-    height: 10px;
+    height: 25px;
     margin: 25px 25px;
 }
 
@@ -73,4 +89,9 @@ ion-card{
 
 ion-toolbar{
     box-shadow: none !important;
+}
+
+.logoutContainer {
+    margin-top: 20px;
+    margin-bottom: 30px;
 }

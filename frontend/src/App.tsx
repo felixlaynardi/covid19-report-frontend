@@ -29,19 +29,26 @@ import ProfileBefore from './pages/ProfilePage/ProfileBefore';
 import { Switch } from 'react-router-dom';
 
 import './index.css'
-
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import EditProfile from "./pages/EditProfilePage/EditProfile";
+import UserContextProvider from "./data/UserContextProvider";
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonRouterOutlet id="main">
-        <Switch>
-          <Route path="/home" component={LandingPage}/>
-          <Route path="/dashboard" component={DashboardPage}/>
-          <Route path="/data" component={DataPage}/>
-          <Route path="/profile" component={ProfileBefore}/>
-          <Redirect exact from="/" to="/home"/>
-        </Switch>
-      </IonRouterOutlet>
+      <UserContextProvider>
+        <IonRouterOutlet id="main">
+          <Switch>
+            <Route path="/home" component={LandingPage}/>
+            <Route path="/dashboard" component={DashboardPage}/>
+            <Route path="/data" component={DataPage}/>
+            <Route path="/login" component={ProfileBefore}/>
+            <Route path="/profile" component={ProfilePage}/>
+            <Route path="/editProfile" component={EditProfile}/>
+            <Route path="/myprofile" component={ProfilePage}/>
+            <Redirect exact from="/" to="/home"/>
+          </Switch>
+        </IonRouterOutlet>
+      </UserContextProvider>
     </IonReactRouter>
   </IonApp>
 );
