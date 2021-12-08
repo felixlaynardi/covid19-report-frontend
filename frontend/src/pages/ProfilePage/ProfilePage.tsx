@@ -22,7 +22,7 @@ import axios from "axios";
 
 const Profile: React.FC = () => {
     const userContext = useContext(UserContext);
-    var getUserUrl = "http://localhost:4747/user";
+    var getUserUrl = "https://covid-umn.herokuapp.com/user";
     const history = useHistory();
     // const [lat, setLat] = useState<number>(0);
     // const [lng, setLng] = useState<number>(0);

@@ -1,15 +1,32 @@
 import Navbar from '../../components/Navbar/Navbar';
 import {
   Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
+  ArcElement,
+  LineElement,
   BarElement,
   PointElement,
-  LineElement,
+  BarController,
+  BubbleController,
+  DoughnutController,
+  LineController,
+  PieController,
+  PolarAreaController,
+  RadarController,
+  ScatterController,
+  CategoryScale,
+  LinearScale,
+  LogarithmicScale,
+  RadialLinearScale,
+  TimeScale,
+  TimeSeriesScale,
+  Decimation,
+  Filler,
+  Legend,
   Title,
   Tooltip,
-  Legend,
+  SubTitle
 } from 'chart.js';
+
 import { Chart } from 'react-chartjs-2';
 
 import './DashboardPage.css';
@@ -18,7 +35,35 @@ import axios from "axios";
 import React from "react";
 
 const DashboardPage : React.FC = () => {
-  const getCasesByDayURL = "http://localhost:4747/covid/days?country=Indonesia";
+
+  ChartJS.register(
+    ArcElement,
+    LineElement,
+    BarElement,
+    PointElement,
+    BarController,
+    BubbleController,
+    DoughnutController,
+    LineController,
+    PieController,
+    PolarAreaController,
+    RadarController,
+    ScatterController,
+    CategoryScale,
+    LinearScale,
+    LogarithmicScale,
+    RadialLinearScale,
+    TimeScale,
+    TimeSeriesScale,
+    Decimation,
+    Filler,
+    Legend,
+    Title,
+    Tooltip,
+    SubTitle
+  );
+
+  const getCasesByDayURL = "https://covid-umn.herokuapp.com/covid/days?country=Indonesia";
 
   let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -50,17 +95,6 @@ const DashboardPage : React.FC = () => {
       }
     });
   }, []);
-
-  ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-  );
   
   const optionsLine = {
     responsive: true,

@@ -38,7 +38,7 @@ const CaseBox: React.FC<LottiePlayer> = (props) => {
   };
 
 const LandingCase: React.FC = () => {
-    const getCasesByDayURL = "http://localhost:4747/covid/increment?country=Indonesia";
+    const getCasesByDayURL = "https://covid-umn.herokuapp.com/covid/increment?country=Indonesia";
 
     const [confirmed, setConfirmed] = React.useState(0);
     const [deaths, setDeaths] = React.useState(0);

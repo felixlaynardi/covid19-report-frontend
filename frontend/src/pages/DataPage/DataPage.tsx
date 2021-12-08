@@ -19,8 +19,8 @@ import React from "react";
 
 const DataPage : React.FC = () => {
   //get cases URL
-  var daysUrl = "http://localhost:4747/covid/days?";
-  var monthsUrl = "http://localhost:4747/covid/months?";
+  var daysUrl = "https://covid-umn.herokuapp.com/covid/days?";
+  var monthsUrl = "https://covid-umn.herokuapp.com/covid/months?";
 
   let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 

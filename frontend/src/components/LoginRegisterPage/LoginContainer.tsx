@@ -22,8 +22,8 @@ interface ContainerProps { }
 const LoginContainer: React.FC<ContainerProps> = () => {
     const emailRef = useRef<HTMLIonInputElement>(null);
     const passwordRef = useRef<HTMLIonInputElement>(null);
-    var loginUrl = "http://localhost:4747/login";
-    var greetUrl = "http://localhost:4747/greet";
+    var loginUrl = "https://covid-umn.herokuapp.com/login";
+    var greetUrl = "https://covid-umn.herokuapp.com/greet";
     const history = useHistory();
     const userContext = useContext(UserContext);
     const Toast = useToast();
